@@ -1,0 +1,746 @@
+@charset "utf-8";
+/* CSS Document */
+        /* 新增通用样式，设置全局字体大小，方便移动端适配 */
+html {
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px; /* 小屏幕下减小字体大小 */
+    }
+}
+        /* 红色主题容器 */
+        .theme-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+@media (max-width: 768px) {
+    .theme-container {
+        padding: 1rem; /* 小屏幕下减小内边距 */
+    }
+}
+        .body {
+            font-family: 'Source Han Sans CN', 'Noto Sans SC', sans-serif;
+            line-height: 1.8;
+            background: #FDF5E6;
+        }
+        /* 新增背景图片样式 */
+        .main-title-container {
+            position: relative;
+            padding: 30rem 2rem 2rem;
+            isolation: isolate; /* 创建新的层叠上下文 */
+            overflow: hidden;
+        }
+.p{
+	text-indent: 2em;
+	margin-left: 5em;
+	margin-right: 5em;
+}
+        /* 模糊背景层 */
+        .main-title-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('京剧头图.jpg') center/cover fixed;
+            filter: blur(1px) brightness(0.8);
+            transform: scale(1.1); /* 防止模糊后出现白边 */
+            z-index: -1;
+        }
+ 
+        /* 动态标题 */
+        .main-title {
+            color: #FDF6F6;
+            font-size: clamp(3rem, 8vw, 6rem);  /* 调整范围：最小3rem，推荐6vw，最大5rem */
+            line-height: 1.2;
+            margin-bottom: 5em;
+			text-align: center;
+			font-family:'Source Han Sans CN', 'Noto Sans SC', sans-serif;
+			letter-spacing: 0.1em;  /* 新增字间距（1em=当前字体尺寸的10%） */
+        }
+
+        @media (max-width: 768px) {
+    .main-title {
+        font-size: clamp(2.5rem, 8vw, 3.5rem);  /* 移动端尺寸调整 */
+        letter-spacing: 0.05em;  /* 缩小字间距 */
+    }
+}
+ 
+        .main-title.active {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .section-title{
+	        color:var(--primary-red);
+	        font-size:2rem;
+			display: inline-block; /* 关键：使宽度自适应内容 */
+            border-bottom: 3px solid var(--primary-red);
+            line-height: 1.2;
+			width:auto;
+            min-width: 10rem; /* 可选：设置最小长度 */
+            max-width: 30rem; /* 可选：设置最大长度 */
+            margin-bottom: 2rem;
+			position: relative;
+            padding: 0 1.5rem;
+            margin: 3rem 0;
+            z-index: 2;
+            isolation: isolate; /* 创建新的层叠上下文 */
+        }
+
+        /* 标题背景通用样式 */
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width:457%;
+            height: 200%;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+            opacity: 0.15;
+            transform: translateY(-50%);
+        }
+ 
+        /* 各章节专属背景 */
+        #background .section-title::after {
+            background-image: url("京剧3.jpeg"); /* 替换为背景图案 */
+			background-size: cover;
+			height:200%;
+        }
+ 
+        #data .section-title::after {
+            background-image: url("京剧4.jpeg");
+            background-size: cover;
+			height:200%;
+        }
+ 
+        #policy .section-title::after {
+            background-image: url("京剧5.jpeg");
+            background-size: cover;
+			height:200%;
+        }
+ 
+        #cases .section-title::after {
+            background-image: url("京剧头图.jpg");
+            background-size: cover;
+			height:200%;
+        }
+ 
+        /* 移动端适配 */
+       @media (max-width: 768px) {
+    .section-title {
+        padding: 0 1rem;
+        margin: 2rem 0;
+        font-size: 1.5rem; /* 小屏幕下减小标题字体大小 */
+    }
+    .section-title::after {
+        height: 80%;
+        opacity: 0.3;
+    }
+}
+        /* 动态内容卡片 */
+        .content-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+            min-height: 200px;
+			margin-bottom: 2rem;
+        }
+ @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated-fade-in {
+    animation: fadeIn 1.5s ease-out forwards;
+}
+        .content-card.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+ 
+        /* 悬停放大效果 */
+        .content-card:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 8px 25px rgba(218, 2, 27, 0.2);
+        }
+ 
+        /* 悬停时内容上移 */
+        .content-card:hover .case-content {
+            transform: translateY(-3px);
+        }
+ 
+        /* 案例内容区域 */
+        .content-card {
+            transition: transform 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .content-card {
+                margin: 1rem 0;
+                transform: none !important;
+            }
+            .content-card:hover {
+                transform: scale(1.02);
+            }
+        }
+
+.content-card1{
+	display: flex;
+    border: 2px solid var;
+    overflow: hidden;
+	padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+ @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated-fade-in {
+    animation: fadeIn 1.5s ease-out forwards;
+}
+        .content-card1.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+ 
+        /* 悬停放大效果 */
+        .content-card1:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 8px 25px rgba(218, 2, 27, 0.2);
+        }
+ 
+        /* 悬停时内容上移 */
+        .content-card1:hover .case-content {
+            transform: translateY(-3px);
+        }
+ 
+        /* 案例内容区域 */
+        .content-card1 {
+            transition: transform 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .content-card1 {
+                margin: 1rem 0;
+                transform: none !important;
+            }
+            .content-card1:hover {
+                transform: scale(1.02);
+            }
+        }
+.image-text-container {
+    display: flex;
+    border: 2px solid var(--primary-red); /* 保留红色边框 */
+    border-radius: 60px;
+    overflow: hidden;
+    margin-bottom: 2rem; /* 增加两个方框之间的垂直间距 */
+}
+
+.image-container {
+    width: 70%; /* 图片占一半宽度 */
+    display: flex;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.text-container {
+    width: 60%; /* 文字占一半宽度 */
+    padding: 1.5rem;
+    display: block;
+    align-items: center;
+    justify-content: center;
+	line-height: 1.8;
+}
+
+		/* 移动端适配 */
+@media (max-width: 768px) {
+    .image-text-container {
+        flex-direction: column; /* 小屏幕下垂直排列 */
+    }
+    .image-container,
+    .text-container {
+        width: 100%; /* 宽度占满 */
+        order: 2; /* 地图在移动端显示在下方 */
+    }
+    .text-container {
+        order: 1; /* 文字在移动端显示在上方 */
+        margin-bottom: 1rem;
+    }
+}
+       /* 顶部固定文字 */
+        .system-footer {
+            position: absolute;
+            up: 1.0rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #D0021B;
+            font-size: 1.5rem;
+            white-space: nowrap;
+            z-index: 2; /* 确保在轨道上方 */
+            padding: 0.2rem 1rem;
+            border-radius: 15px;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 5px rgba(218, 2, 27, 0.1);
+        }
+ 
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .system-footer {
+                bottom: 1rem;
+                font-size: 0.75rem;
+                padding: 0.1rem 0.8rem;
+            }
+        }
+
+.conclusion {
+            position: absolute;
+            up: 1.0rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #D0021B;
+            font-size: 1.5rem;
+            white-space: nowrap;
+            z-index: 2; /* 确保在轨道上方 */
+            padding: 0.2rem 1rem;
+            border-radius: 15px;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 5px rgba(218, 2, 27, 0.1);
+        }
+ 
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .conclusion {
+                bottom: 1rem;
+                font-size: 0.75rem;
+                padding: 0.1rem 0.8rem;
+            }
+        }
+        /* 图表占位符 */
+        .chart-placeholder {
+            width: 100%;
+            height: 200%;
+            background: #FFFFFF;
+            border: 2px solid var(--primary-red);
+            border-radius: 8px;
+            position: relative;
+        }
+ 
+        /* 政策词云容器 */
+        .wordcloud-container {
+            width: 80%;
+            aspect-ratio: 16/9;
+            background: #FFFFFF;
+            border: 2px dashed var(--accent-gold);
+            border-radius: 12px;
+            padding-top: 2rem;
+			margin-bottom: 3rem;
+			padding-bottom: 3rem;
+			margin:0 auto;
+        }
+ @media (max-width: 768px) {
+    .chart-placeholder {
+        height: 200px; /* 小屏幕下减小高度 */
+    }
+    .wordcloud-container {
+        aspect-ratio: auto; /* 小屏幕下取消宽高比限制 */
+        height: auto; /* 高度自适应 */
+    }
+}
+        /* 京剧元素装饰 */
+        .decorative-element {
+            position: absolute;
+            width: 80px;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+ 
+        @media (max-width: 768px) {
+            .theme-container {
+                padding: 1rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .content-card {
+                padding: 1rem;
+            }
+        }
+/* 案例轮播样式 */
+        .tech-case-container {
+            width: 900px;
+            height: 500px;
+            margin: 40px auto;
+            perspective: 1200px;
+            position: relative;
+        }
+
+        .case-carousel {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1.2s cubic-bezier(0.4, 0.25, 0.3, 1);
+        }
+ 
+        .case-item {
+			 /* 新增尺寸约束 */
+			display: grid;
+            grid-template-rows: auto 1px auto;  /* 图片/间距/文字 自动分配 */
+            gap: 15px;
+            min-height: 460px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            padding: 35px;
+            box-sizing: border-box;
+            backface-visibility: hidden;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #eee;
+			/* 新增变换基准点 */
+            transform-origin: 50% 50% 450px;
+        }
+ 
+        .case-image {
+			/* 新增尺寸锁定 */
+		    width: 100%;
+            height: 320px;
+            object-fit: cover;
+            flex-shrink: 0;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.35s ease;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+ 
+        .case-image:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+        }
+ 
+@media (max-width: 768px) {
+    .tech-case-container {
+        width: 95%;
+        height: 420px;
+        margin: 20px auto;
+        perspective: 800px;
+    }
+    .case-item {
+        padding: 20px;
+        min-height: 380px;
+    }
+    .case-image {
+        height: 200px;
+    }
+    .case-title {
+        font-size: 1.2rem;
+        margin: 15px 0;
+    }
+    .case-desc {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    .nav-btn {
+        padding: 12px 16px;
+        font-size: 1.4rem;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+}
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #fff;
+            padding: 20px 25px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+            transition: all 0.3s;
+        }
+ 
+        .nav-btn:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.18);
+        }
+ 
+        .prev { left: -70px; }
+        .next { right: -70px; }
+ 
+        .case-title {
+            font-size: 28px;
+            margin: 20px 0 15px;
+            color: #c72c41;
+            text-align: center;
+            font-family: '华文行楷', serif;
+        }
+ 
+        .case-desc {
+			align-self: start;
+            max-height: 100%;
+            overflow: auto;
+            padding-right: 10px;  /* 为滚动条预留空间 */
+            font-size: 17px;
+            line-height: 1.8;
+            color: #333;
+			text-indent: 2em;
+            max-width: 1000px;
+        }
+
+        @media (max-width: 768px) {
+       .tech-case-container {
+            width: 95%;
+            height: 420px;
+            margin: 40px auto;
+            perspective: 800px;
+        }
+    
+       .case-item {
+            padding: 20px;
+            min-height: 380px;
+        }
+    
+       .case-image {
+            height: 200px;
+        }
+    
+       .case-title {
+            font-size: 1.2rem;
+            margin: 15px 0;
+        }
+    
+       .case-desc {
+            font-size: 0.9rem;
+            line-height: 1.6;
+       }
+    
+       .nav-btn {
+            padding: 12px 16px;
+            font-size: 1.4rem;
+       }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+       }
+
+        /* 新增导航菜单样式 */
+        .page-nav {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+ 
+        .nav-item {
+            position: relative;
+            padding: 0.5rem 1rem;
+            color: #666;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            writing-mode: vertical-lr; /* 垂直文字 */
+        }
+ 
+        .nav-item:hover {
+            color: var(--primary-red);
+            transform: translateX(-5px);
+        }
+ 
+        .nav-item.active {
+            color: var(--primary-red);
+            font-weight: 500;
+        }
+ 
+        .nav-item.active::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 3px;
+            height: 1.2em;
+            background: currentColor;
+            transform: translateY(-50%);
+        }
+ 
+        
+            /* 补充移动端导航样式 */
+        @media (max-width: 768px) {
+        .page-nav {
+            flex-direction: row;
+            right: auto;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 1rem;
+            gap: 0.8rem;
+            background: rgba(255,255,255,0.95);
+            padding: 0.5rem;
+            border-radius: 30px;
+            box-shadow: 0 2px 8px rgba(218,2,27,0.1);
+        }
+        .nav-item {
+            writing-mode: horizontal-tb;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+       .nav-item.active::after {
+            height: 1.1em;
+        }
+   }
+@media (max-width: 768px) {
+    .page-nav {
+        flex-direction: row;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 1rem;
+        gap: 0.8rem;
+        background: rgba(255,255,255,0.95);
+        padding: 0.5rem;
+        border-radius: 30px;
+        box-shadow: 0 2px 8px rgba(218,2,27,0.1);
+    }
+    .nav-item {
+        writing-mode: horizontal-tb;
+        padding: 0.3rem 0.8rem;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+    .nav-item.active::after {
+        height: 1.1em;
+    }
+}
+        /* 新增页脚样式 */
+        .site-footer {
+            background: #ffe5e5; /* 浅红色背景 */
+            padding: 2rem 1rem;
+            margin-top: 4rem;
+            box-shadow: 0 -2px 10px rgba(218, 2, 27, 0.1);
+            position: relative; /* 为装饰元素定位准备 */
+        }
+ 
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+ 
+        .team-members {
+            margin: 1rem 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem 2rem;
+        }
+ 
+        .team-member {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 180px;
+        }
+ 
+        .member-name {
+            color: #D0021B;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+ 
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+ 
+        .contact-link {
+            color: #333;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid #D0021B;
+            border-radius: 20px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+ 
+        .contact-link:hover {
+            background: #D0021B;
+            color: white;
+            transform: translateY(-2px);
+        }
+ 
+        /* 装饰元素 */
+        .footer-decor {
+            position: absolute;
+            width: 120px;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+ 
+        .decor-left {
+            left: 5%;
+            bottom: 10%;
+            transform: rotate(15deg);
+        }
+ 
+        .decor-right {
+            right: 5%;
+            bottom: 10%;
+            transform: rotate(-15deg);
+        }
+ 
+       @media (max-width: 768px) {
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-info {
+        flex-direction: column;
+    }
+    .footer-decor {
+        width: 80px; /* 小屏幕下减小装饰元素大小 */
+    }
+	 }

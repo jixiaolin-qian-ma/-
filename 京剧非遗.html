@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- 新增，防止用户缩放 -->
+    <title>京韵流芳 - 京剧非遗数据图鉴</title>
+    <style>
+        :root {
+            --primary-red: #D0021B;
+            --accent-gold: #B88C35;
+            --text-dark: #333;
+        }
+ 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+		
+		 /* 响应式网格布局 */
+        .grid-container {
+    display: block; 
+    margin: 1rem 0;
+	
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* 小屏幕下单列布局 */
+    }
+}
+    </style>
+    <link href="styleofme.css" rel="stylesheet" type="text/css">
+</head>
+<body style="background: #FDF5E6">
+	 <nav class="page-nav">
+        <a href="#background" class="nav-item active">非遗新生</a>
+        <a href="#data" class="nav-item">剧团荟萃</a>
+        <a href="#policy" class="nav-item">政策词云</a>
+        <a href="#cases" class="nav-item">科创赋能</a>
+		<a href="#conclusion" class="nav-item">结语</a>
+    </nav>
+    <header class="main-title-container">
+        <h1 class="main-title" style="font-size: 4rem; margin: 3rem 0；margin-bottom:5em">
+            <span>数字时代，我们的京</span>韵<span style="color: var(--primary-red)">新</span>声
+        </h1>
+       
+            <!-- 新增底部文字 -->
+    </header>
+ 
+ <main class="theme-container hidden-on-start">
+       <!-- 背景篇 -->
+	  <div class="content-card animated-fade-in" style="margin: 1.5em">
+	  <div class="system-footer">
+               —— 北京市京剧非遗传承发展数据图鉴 ——
+            </div>
+			<p style="text-indent: 2em; margin-top: 4em; letter-spacing: 1.5px;line-height: 1.8">
+			京剧是中国传统文化的重要表现形式，是中国戏曲艺术的代表性剧种，在文学、表演、音乐、舞台美术等方面形成了独具一格的艺术形式。近年来，从中央到地方先后多次出台政策和措施，助力京剧艺术的保护传承和发展。</p>
+			<p style="text-indent: 2em; letter-spacing: 1.5px;line-height: 1.8">当下，京剧的传承发展仍面临诸多挑战：全国京剧院团的数量呈减少趋势，培养京剧专业人才的专科和本科院校数量也在减少，且没有专门的博物馆对京剧艺术相关的资料、实物进行收藏展陈……</p>
+            <p style="text-indent: 2em; margin-bottom: 1em; letter-spacing: 1.5px;line-height: 1.8">中国戏曲剧种有348个，据不完全统计，目前有8个地方戏曲剧种已制定出台了地方性法规，推动保护传承工作，分别是广东省出台的《广东省粤剧保护传承规定》、陕西省出台的《陕西省秦腔艺术保护传承发展条例》、浙江省金华市出台的《金华市婺剧保护传承发展条例》、重庆市出台的《重庆市川剧保护传承条例》、四川省出台的《四川省川剧保护传承条例》、甘肃省出台的《甘肃省陇剧保护传承条例》、江西省上饶市出台的《上饶市弋阳腔保护传承条例》、浙江省绍兴市出台的《绍兴市越剧保护传承发展条例》。作为非物质文化遗产，戏曲保护传承工作也适用于2011年起施行的《中华人民共和国非物质文化遗产法》。</p>
+	    </div>
+<section id="background" class="section-module">
+    <h2 class="section-title">欣欣向荣：非遗演出焕新生</h2>
+    <!-- 政策时间轴 -->
+   <div class="content-card1">
+    <div class="image-container">
+        <img id="timeline-image" src="时间轴.png" alt="政策时间轴图片" >
+    </div>
+    <div class="text-container">
+        <p class="policy-text" style="text-indent: 2em">近年来，国家和地方政府高度重视京剧非遗的保护与传承，出台了一系列政策措施推动京剧艺术的发展，为京剧的传承与创新提供了有力支持，铺就了一条从2020年“资源普查”与“非遗数字化”奠基，到2022年“戏曲活化”成为明确方向的路径，政策重心逐步聚焦于传统戏曲的当代“数字化”生存之路。 </p>
+		<p style="text-indent:2em"><span>2023-2024年，随着“地方专项资金支持”的落实与“AI修复”、“VR沉浸式”技术的规模化应用，戏曲保护进入实操阶段。AI技术高效修复模糊胶片、还原历史唱腔；VR则打破时空限制，让观众身临其境体验经典剧目。</span></p>
+        <p style="text-indent:2em"><span>2025-2026年，“文化强国建设”目标进一步驱动戏曲数字化深度发展。技术从“保真”迈向“创活”，结合文旅融合与校园推广，戏曲正以数字化形态融入公共文化生活。古老艺术借科技之力焕发新生，印证了“数字化”不仅是保存手段，更是激活文化基因的关键引擎——传统戏曲在字节与光影中，找到了属于这个时代的舞台。</span></p>
+    </div>
+</div>
+    <!-- 非遗生态图谱 -->
+    <div class="content-card1">
+    <div class="image-container">
+        <img id="market-image" src="2024全国演出市场.jpg" alt="演出市场图片" style="width=70% ">
+    </div>
+    <div class="text-container">
+        <p class="policy-text" style="text-indent: 2em">在演出市场上，京剧呈现出一片繁荣景象。以2024年全国演出市场为例，各大剧院、剧场座无虚席，京剧演出的场次和观众人数都呈现出稳步增长的态势。国家大剧院、长安大戏院等专业演出场所年均演出超300场。这些演出不仅有经典剧目如《霸王别姬》《贵妃醉酒》的精彩演绎，也有新创剧目的惊艳亮相，满足了不同观众的审美需求。同时，随着科技的发展，AI技术也已开始助力非遗传承数字化。</p>
+		<p class="policy-text" style="text-indent:2em">此外，京剧非遗的生态图谱还延伸到了文化产业的各个领域。与文旅产业的融合发展成为新的亮点，京剧主题的旅游线路、戏曲文化体验活动等吸引了大量游客，让游客在欣赏美景的同时，感受到京剧艺术的独特魅力；校园推广活动也如火如荼地开展，越来越多的学校将京剧纳入校本课程，举办京剧社团、戏曲比赛等活动，培养了学生对传统文化的兴趣和热爱。然而，我们也应清醒地认识到，京剧非遗的保护与传承仍面临着一些挑战。全国京剧院团的数量呈减少趋势，培养京剧专业人才的专科和本科院校数量也在减少，且缺乏专门的博物馆对京剧艺术相关的资料、实物进行收藏展陈。但随着“数字化”赋能京剧传统重焕生机，我们可以相信京剧非遗的生态图谱将在新时代不断丰富和完善。（数据来源：《2024年全国演出市场简报》）</p>
+    </div>
+</div>
+</section>
+ 
+        <!-- 数据篇 -->
+        <section id="data" class="section-module">
+            <h2 class="section-title">剧团荟萃：数据向好促发展</h2>
+            <div class="grid-container">
+                <div class="content-card">
+					<div class="image-text-container">
+        <!-- 左边文字介绍 -->
+        <div class="text-container">
+            <p style="text-indent:2em;padding-left: 2em; line-height:1.8;">
+                北京作为京剧发源地之一，在京剧的发展历程中占据着核心地位，拥有深厚的文化底蕴和众多专业的京剧剧团。目前，北京现有专业剧团<span style="color:var(--primary-red)">20余家</span>，主要集中分布于西城、东城等核心区域。国家大剧院、长安大戏院等场所年均演出超<span style="color:var(--primary-red)">300场</span>，形成以市中心为核心的演出密集区。此外，中国国家京剧院、北京京剧院等国家级和市级剧团也都坐落于此。中国国家京剧院作为国家重点京剧院团，代表着京剧艺术的最高水平，常推出经典剧目的复排和新编历史剧、现代剧，在国内外都享有极高的声誉。其实力强劲，旗下汇聚了众多优秀的新老艺术家，在剧目创作和演出方面成绩斐然，不断挖掘和整理传统剧目，同时积极探索京剧艺术的创新发展，承担着传承京剧艺术、弘扬民族文化以及促进对外文化交流的重要使命，为京剧艺术的传承和推广做出了重要贡献。（数据来源：百度地图）
+            </p>
+            </div>
+        
+        <!-- 右边卫星图+SVG标记 -->
+        <div class="image-container">
+            <div style="position:relative; width:70%; height:100%;">
+                <!-- SVG标记层（需与卫星图坐标匹配） -->
+                <object data="map.svg" type="image/svg+xml" 
+                        style="position:absolute; top:0; left:0; width:140%; height:140%; pointer-events:all;"></object>
+            </div>
+        </div>
+    </div>
+					
+				<div class="grid-container">
+                <div class="content-card">
+					<div class="image-text-container">
+        <!-- 左边文字介绍 -->
+        <div class="text-container">
+            <p style="text-indent:2em">
+                从艺术表演团体从业人数数据来看，2019 年从业人数为412541人，2021年达到453254人的峰值。其中，国有艺术表演团体从业人数相对稳定，维持在9万到10万人左右。在剧团数量方面，近五年艺术表演团体机构数总体呈增长态势。其中国有艺术表演团体机构数较为稳定，保持在1600到1700个左右，占比相对较小。其他艺术表演团体机构数增长显著，从2019年的15229个激增至2022年的17989个，该数据显示出，京剧行业市场主体的多元化趋势，民间力量和社会资本<span style="color:var(--primary-red)">对京剧剧团的参与度不断提高</span>。艺术表演团体收入合计从2020 年的2871251万元增长至2023年的5316917万元，展现出艺术行业收入的强劲增长势头。国有艺术表演团体收入合计较高，2022年达到1882391 万元，在行业收入中占据重要地位。县、市及以下艺术表演团体收入合计在2022年为2205217万元，虽然低于国有团体，但规模也相当可观，反映出<span style="color:var(--primary-red)">基层京剧市场的活力</span>。（数据来源：国家统计局） </p>
+            </div>
+        <div class="image-container">
+            <div style="position:relative; width:100%; height:100%;">
+            <img src="仪表板 1.png" alt="剧团情况汇总" style="width:100%;">
+            </div>
+        </div>
+    </div>
+</div>      
+		</div>
+		</div>
+			</div>
+		</section>
+ 
+        <!-- 政策篇 -->
+        <section id="policy" class="section-module">
+            <h2 class="section-title">润物无声：政策扶持助传播</h2>
+			<p style="text-indent: 2em; margin-bottom: 1em;line-height: 1.8">通过对近年来政策文件的文本分析，我们制作了一张词云图，其展示了政策文件中的关键词条，突出在京剧非遗保护与传承过程中，相关政策所关注的重要领域——包括人才培养、剧目创作、市场推广等。而这些领域中，被频繁提及的”数字化“值得关注。政策的支持为京剧的发展指明了方向，为京剧在新时代的传承与创新提供了坚实保障，清晰地勾勒出戏曲数字化传承的协同网络——“AI修复”与“VR沉浸式”构成技术双翼，“专项资金支持”提供核心保障，共同推动濒危剧目的“再生”。  </p><br>
+			<p style="text-indent: 2em; margin-bottom: 1em;line-height: 1.8">政策也赋予了生态重构更深层的意义。“云演艺”平台将修复成果转化为可传播的数字资产，结合“校园推广”走进年轻群体；“文旅融合发展”则让数字戏曲融入景区实景演出，形成“线下体验+线上传播”闭环。政策层面，“专项资金支持”与“文化资源数字化”的并列表述，凸显资源与资金的精准匹配机制。当山西梆子的老唱片在AI修复中响起，当昆曲身段通过VR触达海外观众，数字化已超越技术工具范畴——它正在重写戏曲的生存法则，让沉睡的瑰宝在虚拟与现实交织的新舞台重生。</p>
+            <div class="wordcloud-container" style="margin-bottom: 2em">
+                <!-- 实际使用时替换为Voyant-Tools生成的词云嵌入代码 -->
+                <img src="政策词云图.png" alt="政策词云图" style="width: 100%; padding:2em">
+            </div>
+        </section>
+ 
+        <!-- 案例篇 -->
+        <section id="cases" class="section-module">
+            <h2 class="section-title">推陈出新：数字赋能展新姿</h2>
+			<p style="text-indent: 2em;line-height: 1.8">在数字时代浪潮的推动下，京剧非遗传承与发展正迎来新的机遇，一系列结合前沿科技与京剧艺术的创新实践不断涌现。从 AI 影像修复让百年京剧影像重焕光彩，到戏曲专业融合人工智能与虚拟现实技术培养新人才；从数字人技术 “复活” 京剧大师，到 8K 超高清技术为经典剧目拓展年轻受众。这些生动案例展现了科技为京剧带来的无限可能，为传统文化传承开辟了新道路。(点击图片可进入原网页) </p>
+            <div class="grid-container">
+                <div class="tech-case-container">
+        <div class="case-carousel">
+            <!-- 案例1：AI戏剧修复 -->
+            <div class="case-item">
+                <a href="https://news.qq.com/rain/a/20240206A03X2B00" target="_blank">
+                    <img src="AI修复京剧.webp" 
+                         class="case-image" 
+                         alt="AI修复京剧影像">
+                </a>
+                <h2 class="case-title">AI助力百年京剧影像重生</h2>
+                <p class="case-desc">2024年2月2日，“中国戏曲数字焕新行动”联合腾讯，运用AI影像修复、6DoF空间录制等前沿技术完成了35部经典戏曲高清复原，包括京剧《逍遥津》、豫剧《花木兰》等珍稀影像，举办了“当科技遇见戏曲之美——甲辰龙年小年夜戏曲焕新”直播活动。该项目通过智能分析、多维度画质增强等四大技术模块实现"修旧如旧"，并借助虚实融合技术打造沉浸式直播，同步上线戏曲数字资源库及变装特效模板。（《北京青年报》）</p>
+            </div>
+ 
+            <!-- 案例2：虚拟京剧舞台（虚拟数据） -->
+            <div class="case-item">
+                <a href="https://peking.bjd.com.cn/content/s66a73895e4b07fbcccae1acc.html" target="_blank">
+                    <img src="戏曲数字人.jpg" 
+                         class="case-image" 
+                         alt="新型戏曲专业">
+                </a>
+                <h2 class="case-title">中国戏曲学院增设“戏曲数字演艺设计”专业</h2>
+                <p class="case-desc">2024年7月，中国戏曲学院在舞台美术系增设“戏曲数字演艺设计”专业。该专业以戏曲学科为本体，融合人工智能、虚拟现实等前沿技术，旨在培养掌握戏曲数字演艺设计基础理论、基本技能和创作方法，能够从事戏曲演艺新空间设计、戏曲文旅体验、戏曲数字化等工作的高素质专业化人才。这一举措标志着我国戏曲教育在科技融合领域迈出重要一步。（《北京日报》）</p>
+            </div>
+ 
+            <!-- 案例3：智能戏曲配器（虚拟数据） -->
+            <div class="case-item">
+                <a href="https://chntheatre.edu.cn/cn/mei/detail/21089.html" target="_blank">
+                    <img src="AI梅兰芳.jpeg" 
+                         class="case-image" 
+                         alt="AI梅兰芳">
+                </a>
+                <h2 class="case-title">数字人技术“复活”戏曲大师梅兰芳</h2>
+                <p class="case-desc">2021年至今，中央戏剧学院与北京理工大学联合发起的“数字梅兰芳”项目通过高精度3D影视级动画技术、人工智能多模态交互及实时渲染技术，成功复现京剧大师梅兰芳26岁便装形象与《穆桂英挂帅》戏服造型，实现动态表情迁移、失传戏服工艺数字化还原等突破，打造出可实时交互的“京剧数字人”，开创了传统文化数字化传承新路径。(《人民日报海外版》）。</p>
+            </div>
+ 
+            <!-- 案例4：区块链戏服溯源（虚拟数据） -->
+            <div class="case-item">
+                <a href="https://export.shobserver.com/baijiahao/html/928715.html" target="_blank">
+                    <img src="锁麟囊.jpg"
+                         class="case-image" 
+                         alt="8k京剧">
+                </a>
+                <h2 class="case-title">8K全景声京剧《锁麟囊》好评如潮</h2>
+                <p class="case-desc">2025年6月14日，上海京剧院通过科技赋能传统戏曲，推出8K超高清版京剧《锁麟囊》。以顶尖技术放大演员表演细节。运用虚实融合、智能交互等手段，《锁麟囊》在保留京剧艺术精髓的同时，成功拓展年轻受众群体，实现传统文化的创造性转化与创新性传播。（《解放日报》）</p>
+            </div>
+        </div>
+ 
+        <div class="nav-btn prev">‹</div>
+        <div class="nav-btn next">›</div>
+    </div>
+			</div>
+			<!-- 结语部分 -->
+			 <section id="conclusion" class="section-module">
+ <div class="content-card animated-fade-in" style="margin: 3em">
+	  <div class="conclusion" style="text-align: center;">
+               —— 结语 ——
+            </div>
+        <p style="font-size: 1.2rem; line-height: 1.8; text-indent: 2em; margin-top:4em">京剧，作为中国传统文化的璀璨明珠，在岁月的长河中熠熠生辉。在数字时代的浪潮下，京剧非遗传承与发展迎来了新的机遇与挑战。我们在科技飞跃的新时代，见证了科技赋能传统剧目吸引年轻受众，见证了政策支持下京剧文化的生态重构，见证了京剧在新时代的华丽转身。</p>
+        <p style="font-size: 1.2rem; line-height: 1.8; text-indent: 2em;">然而，我们也深知京剧非遗保护与传承的道路依然漫长而艰巨。专业人才培养的困境以及京剧文化普及的不足，都是我们需要面对和解决的问题。但我们坚信，在科技赋能和全社会的共同努力下，京剧非遗的生态图谱将不断丰富和完善，京剧这一古老的艺术形式将在新时代绽放更加绚烂的光彩。</p>
+        <p style="font-size: 1.2rem; line-height: 1.8; text-indent: 2em;">让我们携手共进，守护京剧非遗的瑰宝，传承中华民族的文化基因，让京韵之声在数字时代的新舞台上永远回响。</p>
+    </div>
+</section>
+	 </section>
+ 	</main>
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.section-title, .content-card').forEach(el => {
+        observer.observe(el);
+    });
+
+    // 装饰元素动画
+    function createDecorativeElement() {
+        const elem = document.createElement('img');
+        elem.src = "祥云.png"; // 京剧元素SVG
+        elem.className = 'decorative-element';
+        elem.style.left = Math.random() * 90 + '%';
+        elem.style.animation = `float 6s ${Math.random()*2}s infinite`;
+        document.body.appendChild(elem);
+        setTimeout(() => elem.remove(), 10000);
+    }
+
+    setInterval(createDecorativeElement, 2000);
+
+    // 滚动监听逻辑
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    function updateActiveNav() {
+        const scrollPos = window.scrollY + window.innerHeight/2;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+
+            if(scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                navItems.forEach(item => item.classList.remove('active'));
+                document.querySelector(`.nav-item[href="#${section.id}"]`).classList.add('active');
+            }
+        });
+    }
+
+    // 平滑滚动实现
+    navItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = item.getAttribute('href');
+            const target = document.querySelector(targetId);
+
+            window.scrollTo({
+                top: target.offsetTop - 80, // 预留标题栏空间
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // 事件监听
+    window.addEventListener('scroll', updateActiveNav);
+    window.addEventListener('resize', updateActiveNav);
+    updateActiveNav(); // 初始化
+
+    // 卫星图标记点交互
+    const markers = document.querySelectorAll('.marker');
+    const tooltip = document.getElementById('tooltip');
+    const tooltipName = document.getElementById('tooltip-name');
+    const tooltipAddress = document.getElementById('tooltip-address');
+
+    markers.forEach(marker => {
+        marker.addEventListener('mouseover', function() {
+            // 获取标记数据
+            const name = this.getAttribute('data-name');
+            const address = this.getAttribute('data-address');
+
+            // 显示提示框
+            tooltipName.textContent = name;
+            tooltipAddress.textContent = address;
+            tooltip.setAttribute('visibility', 'visible');
+
+            // 定位提示框（需根据SVG坐标调整）
+            const cx = parseInt(this.getAttribute('cx'));
+            const cy = parseInt(this.getAttribute('cy'));
+            tooltip.setAttribute('x', cx + 10);
+            tooltip.setAttribute('y', cy - 40);
+        });
+
+        marker.addEventListener('mouseout', function() {
+            tooltip.setAttribute('visibility', 'hidden');
+        });
+
+        // 点击标记可添加更多交互（如跳转详情）
+        marker.addEventListener('click', function() {
+            const name = this.getAttribute('data-name');
+            alert(`已选中：${name}`);
+            // 可扩展为打开详情页或地图导航
+        });
+    });
+
+    // 案例轮播
+    const carousel = document.querySelector('.case-carousel');
+    const items = document.querySelectorAll('.case-item');
+    const totalItems = items.length;
+    let currentAngle = 0;
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        const itemWidth = 360 / totalItems;
+        carousel.style.transform = `rotateY(${currentAngle}deg) translateZ(-450px)`;
+        items.forEach((item, index) => {
+            item.style.transform = `rotateY(${index * itemWidth}deg) translateZ(450px)`;
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        currentAngle -= 90;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        currentAngle += 90;
+        updateCarousel();
+    }
+
+    document.querySelector('.next').addEventListener('click', nextSlide);
+    document.querySelector('.prev').addEventListener('click', prevSlide);
+
+    // 初始化
+    updateCarousel();
+});
+    </script>
+<footer class="site-footer hidden-on-start">
+        <div class="footer-container">
+            <!-- 团队信息 -->
+            <ul class="team-members">
+                <li class="team-member">
+                    <div class="member-name">季小琳</div>
+                    <div class="member-role">20231071126</div>
+                </li>
+                <li class="team-member">
+                    <div class="member-name">钱任之</div>
+                    <div class="member-role">20231071128</div>
+                </li>
+                <li class="team-member">
+                    <div class="member-name">马跃溪</div>
+                    <div class="member-role">20231071107</div>
+                </li>
+            </ul>
+ 
+            <!-- 联系方式 -->
+            <div class="contact-info">
+                <a href="mailto:jingju@example.com" class="contact-link">
+                    <svg viewBox="0 0 24 24" width="20" fill="currentColor">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    3083650656@qq.com
+                </a>
+                <a href="tel:+8613800138000" class="contact-link">
+                    <svg viewBox="0 0 24 24" width="20" fill="currentColor">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.28-.28.68-.37 1.08-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.13.4-.04.88-.43 1.07z"/>
+                    </svg>
+                    +86 180-8133-9078
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
